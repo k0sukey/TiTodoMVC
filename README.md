@@ -2,6 +2,8 @@
 
 Titanium port like a [TastJS](http://tastejs.com/) [TodoMVC](http://todomvc.com/).
 
+![screenshot.png](screenshot.png)
+
 ## Getting started
 
 ### If you want to clone from this repository
