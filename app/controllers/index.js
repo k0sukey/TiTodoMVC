@@ -7,7 +7,6 @@ todo.comparator = function(_model) {
 };
 
 var activestate = 0,
-	activefield = null,
 	prevtodo = '',
 	toggleall = false;
 
@@ -91,7 +90,6 @@ function doEdit(e) {
 		editable: true
 	});
 	prevtodo = e.source.getValue();
-	activefield = e.source;
 	e.source.focus();
 }
 
@@ -101,7 +99,6 @@ function doEdited(e) {
 	e.source.applyProperties({
 		editable: false
 	});
-	activefield = null;
 	e.source.blur();
 
 	if (e.source.getValue() === '') {
