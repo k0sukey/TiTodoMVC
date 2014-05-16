@@ -53,10 +53,23 @@ $ mkdir ./app/views/android
 * Toggle todo(s), tap the check mark
 * All/Active/Completed filter
 
+
+## ti-commonjs
+
+[ti-commonjs](https://github.com/tonylukasavage/ti-commonjs) is npm package management in your Alloy app.
+But alloy/* can not be require on Android.
+[So hacking](https://github.com/tonylukasavage/ti-commonjs/blob/master/lib/ti-commonjs.js#L53).
+
+~~~
+} else if (p.match(/^alloy\/?/)) {
+	rawPath = p;
+~~~
+
 ## Changelog
 
 * Committed Android ver
 * Committed iOS ver
+
 
 ## License
 
