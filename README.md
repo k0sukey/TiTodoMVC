@@ -55,8 +55,9 @@ $ mkdir ./app/views/android
 
 ## Changelog
 
-* Released iOS ver
+* Committed Android ver
+* Committed iOS ver
 
 ## License
 
-The MIT License (MIT) Copyright (c) 2013 Kosuke Isobe
+The MIT License (MIT) Copyright (c) 2014 Kosuke Isobe

@@ -10,7 +10,8 @@
             __alloyId11.__transform = doTransform(__alloyId11);
             var __alloyId13 = {
                 properties: {
-                    height: 44
+                    height: 44,
+                    selectionStyle: Ti.UI.iPhone.ListViewCellSelectionStyle.NONE
                 },
                 template: "todolist",
                 done: {
@@ -88,7 +89,6 @@
             editable: true
         });
         prevtodo = e.source.getValue();
-        activefield = e.source;
         e.source.focus();
     }
     function doEdited(e) {
@@ -96,7 +96,6 @@
         e.source.applyProperties({
             editable: false
         });
-        activefield = null;
         e.source.blur();
         if ("" === e.source.getValue()) {
             e.source.applyProperties({
@@ -291,7 +290,7 @@
     todo.comparator = function(_model) {
         return -moment(_model.get("created_at")).unix();
     };
-    var activestate = 0, activefield = null, prevtodo = "", toggleall = false;
+    var activestate = 0, prevtodo = "", toggleall = false;
     $.inputtodo.addEventListener("return", lodash.debounce(function() {
         $.inputtodo.blur();
         if ("" === $.inputtodo.getValue()) return;
@@ -309,9 +308,8 @@
             }
         });
     }), 1e3, true);
-    $.todos.addEventListener("itemclick", lodash.debounce(function(e) {
+    $.todos.addEventListener("itemclick", lodash.debounce(function() {
         $.inputtodo.blur();
-        $.todos.deselectItem(0, e.itemIndex);
     }), 1e3, true);
     $.index.addEventListener("open", function() {
         todofetch();

@@ -28,9 +28,15 @@ function todofetch() {
 				color: toggleall ? '#d9d9d9' : '#737373'
 			});
 
-			$.window.applyProperties({
-				title: 'todos - ' + itemsleft + ' items left'
-			});
+			if (OS_IOS) {
+				$.window.applyProperties({
+					title: 'todos - ' + itemsleft + ' items left'
+				});
+			} else {
+				$.index.applyProperties({
+					title: 'todos - ' + itemsleft + ' items left'
+				});
+			}
 		}
 	});
 }
@@ -72,9 +78,9 @@ function doToggleall(e) {
 function doToggle(e) {
 	e.cancelBubble = true;
 
-	var model = todo.get(e.source.todoId);
+	var model = todo.get(OS_IOS ? e.source.todoId : e.section.getItemAt(e.itemIndex).done.todoId);
 	model.set({
-		done: !parseInt(model.get('done'), 10)
+		done: parseInt(model.get('done'), 10) ? 0 : 1
 	});
 	model.save(null, {
 		success: function(){
@@ -86,9 +92,16 @@ function doToggle(e) {
 function doEdit(e) {
 	e.cancelBubble = true;
 
-	e.source.applyProperties({
-		editable: true
-	});
+	if (OS_IOS) {
+		e.source.applyProperties({
+			editable: true
+		});
+	} else {
+		var item = e.section.getItemAt(e.itemIndex);
+		item.todo.editable = true;
+		e.section.updateItemAt(e.itemIndex, item);
+	}
+
 	prevtodo = e.source.getValue();
 	e.source.focus();
 }
@@ -108,7 +121,7 @@ function doEdited(e) {
 		return;
 	}
 
-	var model = todo.get(e.source.todoId);
+	var model = todo.get(OS_IOS ? e.source.todoId : e.section.getItemAt(e.itemIndex).todo.todoId);
 	model.set({
 		todo: e.source.getValue(),
 		updated_at: moment().format('YYYY-MM-DD HH:mm:ss')
@@ -123,7 +136,7 @@ function doEdited(e) {
 function doDelete(e) {
 	e.cancelBubble = true;
 
-	var model = todo.get(e.source.todoId);
+	var model = todo.get(OS_IOS ? e.source.todoId : e.section.getItemAt(e.itemIndex).todo.todoId);
 	model.destroy({
 		success: function(){
 			todofetch();
@@ -134,6 +147,24 @@ function doDelete(e) {
 function doTab(e) {
 	activestate = e.index;
 	todofetch();
+}
+
+function doAll() {
+	doTab({
+		index: 0
+	});
+}
+
+function doActive() {
+	doTab({
+		index: 1
+	});
+}
+
+function doCompleted() {
+	doTab({
+		index: 2
+	});
 }
 
 $.inputtodo.addEventListener('return', lodash.debounce(function(){
@@ -160,7 +191,6 @@ $.inputtodo.addEventListener('return', lodash.debounce(function(){
 
 $.todos.addEventListener('itemclick', lodash.debounce(function(e){
 	$.inputtodo.blur();
-	$.todos.deselectItem(0, e.itemIndex);
 }), 1000, true);
 
 $.index.addEventListener('open', function(){

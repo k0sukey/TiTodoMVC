@@ -1,6 +1,9 @@
 'Window': {
 	backgroundColor: '#fff'
 }
+'Window[platform=android]': {
+	windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_STATE_HIDDEN | Ti.UI.Android.SOFT_INPUT_ADJUST_RESIZE
+}
 'ListView': {
 	top: 0,
 	right: 0,
@@ -9,6 +12,9 @@
 	width: Ti.UI.FILL,
 	height: Ti.UI.FILL,
 	backgroundColor: '#fcfcfc'
+}
+'ListView[platform=android]': {
+	separatorColor: '#bcbac1'
 }
 '#header': {
 	width: Ti.UI.FILL,
@@ -38,8 +44,14 @@
 	height: Ti.UI.FILL,
 	paddingRight: 10
 }
+'TextField[platform=android]': {
+	color: '#333'
+}
 'ListItem': {
 	height: 44
+}
+'ListItem[platform=ios]': {
+	selectionStyle: Ti.UI.iPhone.ListViewCellSelectionStyle.NONE
 }
 '.toggles': {
 	top: 0,
@@ -52,12 +64,6 @@
 	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
 }
 '.todoitem': {
-	top: 0,
-	right: 0,
-	bottom: 0,
-	left: 50,
-	width: Ti.UI.FILL,
-	height: Ti.UI.FILL,
 	editable: false
 }
 'TabbedBar': {
