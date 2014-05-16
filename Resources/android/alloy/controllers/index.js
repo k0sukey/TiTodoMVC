@@ -282,7 +282,7 @@
     $.__views.todos = Ti.UI.createListView({
         top: 0,
         right: 0,
-        bottom: 44,
+        bottom: 0,
         left: 0,
         width: Ti.UI.FILL,
         height: Ti.UI.FILL,

@@ -14,6 +14,7 @@
 	backgroundColor: '#fcfcfc'
 }
 'ListView[platform=android]': {
+	bottom: 0,
 	separatorColor: '#bcbac1'
 }
 '#header': {
