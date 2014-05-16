@@ -33,9 +33,7 @@ function todofetch() {
 					title: 'todos - ' + itemsleft + ' items left'
 				});
 			} else {
-				$.index.applyProperties({
-					title: 'todos - ' + itemsleft + ' items left'
-				});
+				$.index.activity.actionBar.title = 'todos - ' + itemsleft + ' items left';
 			}
 		}
 	});

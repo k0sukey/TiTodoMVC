@@ -71,9 +71,7 @@
                 $.toggleall.applyProperties({
                     color: toggleall ? "#d9d9d9" : "#737373"
                 });
-                $.index.applyProperties({
-                    title: "todos - " + itemsleft + " items left"
-                });
+                $.index.activity.actionBar.title = "todos - " + itemsleft + " items left";
             }
         });
     }
