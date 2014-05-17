@@ -33,7 +33,9 @@ function todofetch() {
           title: L('todos') + ' - ' + itemsleft + ' ' + L('items_left')
         });
       } else {
-        $.index.activity.actionBar.title = L('todos') + ' - ' + itemsleft + ' ' + L('items_left');
+        if($index.activity && $.index.activity.actionBar){
+          $.index.activity.actionBar.title = L('todos') + ' - ' + itemsleft + ' ' + L('items_left');
+        }
       }
     }
   });
