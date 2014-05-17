@@ -36,6 +36,9 @@
 	width: 44,
 	height: 44
 }
+'#inputtodo': {
+  hintText: L('what_needs_to_be_done')
+}
 'TextField': {
 	top: 0,
 	right: 0,
@@ -69,4 +72,13 @@
 }
 'TabbedBar': {
 	index: 0
+}
+'#label_all':{
+  title: L("label_all")
+}
+'#label_active':{
+  title: L("label_active")
+}
+'#label_completed':{
+  title: L("label_completed")
 }
