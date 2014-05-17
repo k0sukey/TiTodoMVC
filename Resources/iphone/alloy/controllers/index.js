@@ -75,7 +75,7 @@
         e.cancelBubble = true;
         var model = todo.get(e.source.todoId);
         model.set({
-            done: !parseInt(model.get("done"), 10)
+            done: parseInt(model.get("done"), 10) ? 0 : 1
         });
         model.save(null, {
             success: function() {

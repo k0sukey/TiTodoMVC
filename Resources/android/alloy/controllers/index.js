@@ -71,7 +71,7 @@
                 $.toggleall.applyProperties({
                     color: toggleall ? "#d9d9d9" : "#737373"
                 });
-                $.index.activity.actionBar.title = "todos - " + itemsleft + " items left";
+                $.index.activity.actionBar.title = L("todos") + " - " + itemsleft + " " + L("items_left");
             }
         });
     }
@@ -215,8 +215,8 @@
         height: Ti.UI.FILL,
         paddingRight: 10,
         color: "#333",
-        id: "inputtodo",
-        hintText: "What needs to be done?"
+        hintText: "What needs to be done?",
+        id: "inputtodo"
     });
     $.__views.header.add($.__views.inputtodo);
     var __alloyId9 = {};
@@ -324,6 +324,7 @@
         $.inputtodo.blur();
     }), 1e3, true);
     $.index.addEventListener("open", function() {
+        $.index.title = L("todos") + " - o " + L("items_left");
         todofetch();
     });
     $.index.open();
