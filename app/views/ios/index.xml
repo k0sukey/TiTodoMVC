@@ -5,7 +5,7 @@
 				<HeaderView>
 					<View id="header">
 						<Label id="toggleall" class="toggles" onClick="doToggleall">✓</Label>
-						<TextField id="inputtodo" hintText="What needs to be done?"/>
+						<TextField id="inputtodo"/>
 					</View>
 				</HeaderView>
 				<Templates>
@@ -21,9 +21,9 @@
 			<View id="footer">
 				<TabbedBar id="tab" onClick="doTab">
 					<Labels>
-						<Label>All</Label>
-						<Label>Active</Label>
-						<Label>Completed</Label>
+            <Label id="label_all"></Label>
+            <Label id="label_active"></Label>
+            <Label id="label_completed"></Label>
 					</Labels>
 				</TabbedBar>
 			</View>

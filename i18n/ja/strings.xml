@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <string name="what_needs_to_be_done">ToDoを入力</string>
+  <string name="label_all">全て</string>
+  <string name="label_active">作業中</string>
+  <string name="label_completed">完了</string>
+  <string name="todos">todo</string>
+  <string name="items_left">個の残件</string>
+</resources>

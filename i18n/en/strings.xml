@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <string name="what_needs_to_be_done">What needs to be done?</string>
+  <string name="label_all">All</string>
+  <string name="label_active">Active</string>
+  <string name="label_completed">Completed</string>
+  <string name="todos">todos</string>
+  <string name="items_left">items left</string>
+</resources>

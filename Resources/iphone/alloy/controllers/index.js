@@ -42,7 +42,7 @@
                     color: toggleall ? "#d9d9d9" : "#737373"
                 });
                 $.window.applyProperties({
-                    title: "todos - " + itemsleft + " items left"
+                    title: L("todos") + " - " + itemsleft + " " + L("items_left")
                 });
             }
         });
@@ -169,8 +169,8 @@
         width: Ti.UI.FILL,
         height: Ti.UI.FILL,
         paddingRight: 10,
-        id: "inputtodo",
-        hintText: "What needs to be done?"
+        hintText: L("what_needs_to_be_done"),
+        id: "inputtodo"
     });
     $.__views.header.add($.__views.inputtodo);
     var __alloyId1 = {};
@@ -255,21 +255,21 @@
     });
     $.__views.window.add($.__views.footer);
     var __alloyId18 = [];
-    var __alloyId22 = {
-        title: "All",
+    var __alloyId19 = {
+        title: L("label_all"),
         ns: "Alloy.Abstract"
     };
-    __alloyId18.push(__alloyId22);
-    var __alloyId23 = {
-        title: "Active",
+    __alloyId18.push(__alloyId19);
+    var __alloyId20 = {
+        title: L("label_active"),
         ns: "Alloy.Abstract"
     };
-    __alloyId18.push(__alloyId23);
-    var __alloyId24 = {
-        title: "Completed",
+    __alloyId18.push(__alloyId20);
+    var __alloyId21 = {
+        title: L("label_completed"),
         ns: "Alloy.Abstract"
     };
-    __alloyId18.push(__alloyId24);
+    __alloyId18.push(__alloyId21);
     $.__views.tab = Ti.UI.iOS.createTabbedBar({
         index: 0,
         labels: __alloyId18,
@@ -314,6 +314,7 @@
         $.todos.deselectItem(0, e.itemIndex);
     }), 1e3, true);
     $.index.addEventListener("open", function() {
+        $.index.title = L("todos") + " - o " + L("items_left");
         todofetch();
     });
     $.index.open();
