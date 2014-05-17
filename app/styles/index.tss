@@ -1,84 +1,84 @@
 'Window': {
-	backgroundColor: '#fff'
-}
+  backgroundColor: '#fff'
+},
 'Window[platform=android]': {
-	windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_STATE_HIDDEN | Ti.UI.Android.SOFT_INPUT_ADJUST_RESIZE
-}
+  windowSoftInputMode: Ti.UI.Android.SOFT_INPUT_STATE_HIDDEN | Ti.UI.Android.SOFT_INPUT_ADJUST_RESIZE
+},
 'ListView': {
-	top: 0,
-	right: 0,
-	bottom: 44,
-	left: 0,
-	width: Ti.UI.FILL,
-	height: Ti.UI.FILL,
-	backgroundColor: '#fcfcfc'
-}
+  top: 0,
+  right: 0,
+  bottom: 44,
+  left: 0,
+  width: Ti.UI.FILL,
+  height: Ti.UI.FILL,
+  backgroundColor: '#fcfcfc'
+},
 'ListView[platform=android]': {
-	bottom: 0,
-	separatorColor: '#bcbac1'
-}
+  bottom: 0,
+  separatorColor: '#bcbac1'
+},
 '#header': {
-	width: Ti.UI.FILL,
-	height: 44,
-	backgroundColor: '#f6f6f6'
-}
+  width: Ti.UI.FILL,
+  height: 44,
+  backgroundColor: '#f6f6f6'
+},
 '#footer': {
-	right: 0,
-	bottom: 0,
-	left: 0,
-	width: Ti.UI.FILL,
-	height: 44
-}
+  right: 0,
+  bottom: 0,
+  left: 0,
+  width: Ti.UI.FILL,
+  height: 44
+},
 '#toggleall': {
-	top: 0,
-	bottom: 0,
-	left: 0,
-	width: 44,
-	height: 44
-}
+  top: 0,
+  bottom: 0,
+  left: 0,
+  width: 44,
+  height: 44
+},
 '#inputtodo': {
   hintText: L('what_needs_to_be_done')
-}
+},
 'TextField': {
-	top: 0,
-	right: 0,
-	bottom: 0,
-	left: 50,
-	width: Ti.UI.FILL,
-	height: Ti.UI.FILL,
-	paddingRight: 10
-}
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 50,
+  width: Ti.UI.FILL,
+  height: Ti.UI.FILL,
+  paddingRight: 10
+},
 'TextField[platform=android]': {
-	color: '#333'
-}
+  color: '#333'
+},
 'ListItem': {
-	height: 44
-}
+  height: 44
+},
 'ListItem[platform=ios]': {
-	selectionStyle: Ti.UI.iPhone.ListViewCellSelectionStyle.NONE
-}
+  selectionStyle: Ti.UI.iPhone.ListViewCellSelectionStyle.NONE
+},
 '.toggles': {
-	top: 0,
-	bottom: 0,
-	left: 0,
-	width: 44,
-	height: 44,
-	color: '#d9d9d9',
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
-}
+  top: 0,
+  bottom: 0,
+  left: 0,
+  width: 44,
+  height: 44,
+  color: '#d9d9d9',
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+  verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
+},
 '.todoitem': {
-	editable: false
-}
+  editable: false
+},
 'TabbedBar': {
-	index: 0
-}
+  index: 0
+},
 '#label_all':{
   title: L("label_all")
-}
+},
 '#label_active':{
   title: L("label_active")
-}
+},
 '#label_completed':{
   title: L("label_completed")
 }
