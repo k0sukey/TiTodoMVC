@@ -1,5 +1,26 @@
 <Alloy>
-	<Window>
-		<Label>Comming soon...</Label>
+	<Window title="todos - 0 items left" exitOnClose="true">
+		<Menu>
+			<MenuItem class="menu" title="All" onClick="doAll"/>
+			<MenuItem class="menu" title="Active" onClick="doActive"/>
+			<MenuItem class="menu" title="Completed" onClick="doCompleted"/>
+		</Menu>
+		<ListView id="todos" defaultItemTemplate="todolist">
+			<HeaderView>
+				<View id="header">
+					<Label id="toggleall" class="toggles" onClick="doToggleall">✓</Label>
+					<TextField id="inputtodo" hintText="What needs to be done?"/>
+				</View>
+			</HeaderView>
+			<Templates>
+				<ItemTemplate name="todolist">
+					<Label bindId="done" class="toggles" onClick="doToggle">✓</Label>
+					<TextField bindId="todo" class="todoitem" onDblclick="doEdit" onSwipe="doDelete" onReturn="doEdited"/>
+				</ItemTemplate>
+			</Templates>
+			<ListSection dataCollection="todo" dataTransform="doTransform" dataFilter="doFilter">
+				<ListItem template="todolist" done:todoId="{id}" done:color="{done}" todo:todoId="{id}" todo:value="{todo}"/>
+			</ListSection>
+		</ListView>
 	</Window>
 </Alloy>

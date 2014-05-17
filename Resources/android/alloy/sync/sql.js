@@ -261,7 +261,7 @@ function installDatabase(config) {
     var dbName = config.adapter.db_name;
     Ti.API.debug('Installing sql database "' + dbFile + '" with name "' + dbName + '"');
     var db = Ti.Database.install(dbFile, dbName);
-    if (false === config.adapter.remoteBackup && true) {
+    if (false === config.adapter.remoteBackup && false) {
         Ti.API.debug('iCloud "do not backup" flag set for database "' + dbFile + '"');
         db.file.setRemoteBackup(false);
     }
@@ -310,7 +310,7 @@ var cache = {
 
 module.exports.beforeModelCreate = function(config, name) {
     if (cache.config[name]) return cache.config[name];
-    if ("mobileweb" === Ti.Platform.osname || "undefined" == typeof Ti.Database) throw "No support for Titanium.Database in MobileWeb environment.";
+    if (false || "undefined" == typeof Ti.Database) throw "No support for Titanium.Database in MobileWeb environment.";
     config.adapter.db_file && installDatabase(config);
     if (!config.adapter.idAttribute) {
         Ti.API.info('No config.adapter.idAttribute specified for table "' + config.adapter.collection_name + '"');
