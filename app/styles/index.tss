@@ -1,6 +1,6 @@
 'Window': {
 	backgroundColor: '#fff'
-}
+},
 'ListView': {
 	top: 0,
 	right: 0,
@@ -9,29 +9,29 @@
 	width: Ti.UI.FILL,
 	height: Ti.UI.FILL,
 	backgroundColor: '#fcfcfc'
-}
+},
 '#header': {
 	width: Ti.UI.FILL,
 	height: 44,
 	backgroundColor: '#f6f6f6'
-}
+},
 '#footer': {
 	right: 0,
 	bottom: 0,
 	left: 0,
 	width: Ti.UI.FILL,
 	height: 44
-}
+},
 '#toggleall': {
 	top: 0,
 	bottom: 0,
 	left: 0,
 	width: 44,
 	height: 44
-}
+},
 '#inputtodo': {
   hintText: L('what_needs_to_be_done')
-}
+},
 'TextField': {
 	top: 0,
 	right: 0,
@@ -40,10 +40,10 @@
 	width: Ti.UI.FILL,
 	height: Ti.UI.FILL,
 	paddingRight: 10
-}
+},
 'ListItem': {
 	height: 44
-}
+},
 '.toggles': {
 	top: 0,
 	bottom: 0,
@@ -53,7 +53,7 @@
 	color: '#d9d9d9',
 	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
-}
+},
 '.todoitem': {
 	top: 0,
 	right: 0,
@@ -62,16 +62,16 @@
 	width: Ti.UI.FILL,
 	height: Ti.UI.FILL,
 	editable: false
-}
+},
 'TabbedBar': {
 	index: 0
-}
+},
 '#label_all':{
   title: L("label_all")
-}
+},
 '#label_active':{
   title: L("label_active")
-}
+},
 '#label_completed':{
   title: L("label_completed")
 }
