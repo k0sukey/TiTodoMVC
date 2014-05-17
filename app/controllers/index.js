@@ -30,10 +30,10 @@ function todofetch() {
 
 			if (OS_IOS) {
 				$.window.applyProperties({
-					title: 'todos - ' + itemsleft + ' items left'
+					title: L('todos') + ' - ' + itemsleft + ' ' + L('items_left')
 				});
 			} else {
-				$.index.activity.actionBar.title = 'todos - ' + itemsleft + ' items left';
+				$.index.activity.actionBar.title = L('todos') + ' - ' + itemsleft + ' ' + L('items_left');
 			}
 		}
 	});
@@ -192,6 +192,8 @@ $.todos.addEventListener('itemclick', lodash.debounce(function(e){
 }), 1000, true);
 
 $.index.addEventListener('open', function(){
+  $.index.title = L('todos') + ' - o ' + L('items_left');
 	todofetch();
 });
+
 $.index.open();
